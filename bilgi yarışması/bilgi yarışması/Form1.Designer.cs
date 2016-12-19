@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labeldogru = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelyanıt = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -44,6 +42,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelyanlıssayısı = new System.Windows.Forms.Label();
             this.buttonileri = new System.Windows.Forms.Button();
+            this.labelsüre = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelbos = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -53,26 +54,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(700, 245);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(732, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Doğru cevap:";
-            // 
-            // labeldogru
-            // 
-            this.labeldogru.AutoSize = true;
-            this.labeldogru.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labeldogru.Location = new System.Drawing.Point(893, 43);
-            this.labeldogru.Name = "labeldogru";
-            this.labeldogru.Size = new System.Drawing.Size(39, 29);
-            this.labeldogru.TabIndex = 2;
-            this.labeldogru.Text = "00";
             // 
             // label2
             // 
@@ -93,6 +74,10 @@
             this.labelyanıt.Size = new System.Drawing.Size(39, 29);
             this.labelyanıt.TabIndex = 4;
             this.labelyanıt.Text = "00";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // button1
             // 
@@ -177,9 +162,39 @@
             this.buttonileri.Name = "buttonileri";
             this.buttonileri.Size = new System.Drawing.Size(220, 90);
             this.buttonileri.TabIndex = 13;
-            this.buttonileri.Text = "İLERİ";
+            this.buttonileri.Text = "başla";
             this.buttonileri.UseVisualStyleBackColor = true;
             this.buttonileri.Click += new System.EventHandler(this.buttonileri_Click);
+            // 
+            // labelsüre
+            // 
+            this.labelsüre.AutoSize = true;
+            this.labelsüre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelsüre.Location = new System.Drawing.Point(995, 34);
+            this.labelsüre.Name = "labelsüre";
+            this.labelsüre.Size = new System.Drawing.Size(39, 29);
+            this.labelsüre.TabIndex = 14;
+            this.labelsüre.Text = "00";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(727, 301);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 29);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "boş sayısı:";
+            // 
+            // labelbos
+            // 
+            this.labelbos.AutoSize = true;
+            this.labelbos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelbos.Location = new System.Drawing.Point(858, 301);
+            this.labelbos.Name = "labelbos";
+            this.labelbos.Size = new System.Drawing.Size(39, 29);
+            this.labelbos.TabIndex = 16;
+            this.labelbos.Text = "00";
             // 
             // Form1
             // 
@@ -187,6 +202,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lime;
             this.ClientSize = new System.Drawing.Size(1078, 667);
+            this.Controls.Add(this.labelbos);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelsüre);
             this.Controls.Add(this.buttonileri);
             this.Controls.Add(this.labelyanlıssayısı);
             this.Controls.Add(this.label4);
@@ -198,8 +216,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelyanıt);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.labeldogru);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -212,8 +228,6 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labeldogru;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelyanıt;
         private System.Windows.Forms.Timer timer1;
@@ -226,6 +240,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelyanlıssayısı;
         private System.Windows.Forms.Button buttonileri;
+        private System.Windows.Forms.Label labelsüre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelbos;
     }
 }
 
